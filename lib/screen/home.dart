@@ -1,66 +1,70 @@
 import 'package:flutter/material.dart';
 import '../models/film.dart';
-import '../screen/detail_screen_aplikasi.dart';
 import '../widget/film_item.dart';
+import '../screen/detail_screen_aplikasi.dart';
 
 class HomeScreen extends StatelessWidget {
-  final List<Film> films = [
-    Film(
-      title: 'Pengabdi Setan 1',
-      year: 2017,
-      genre: 'Horror, Thriller',
-      sipnosis:'Rini dan adik-adiknya yang diteror hantu ibu mereka setelah sang ibu meninggal, yang ternyata berawal dari perjanjian hitam masa lalu keluarga tersebut dengan sekte pemuja setan untuk mendapatkan anak.',
-      poster: 'assets/images/pengabdisetansatu.jpg',
-    ),
-    Film(
-      title: 'Pengabdi Setan 2',
-      year: 2017,
-      genre: 'Horror, Thriller',
-      sipnosis:'Beberapa tahun setelah berhasil menyelamatkan diri dari kejadian mengerikan yang membuat mereka kehilangan ibu dan si bungsu Ian, Rini dan adik-adiknya, Toni dan Bondi, serta Bapak tinggal di rumah susun karena percaya tinggal di rumah susun aman jika terjadi sesuatu karena ada banyak orang.',
-      poster: 'assets/images/pengabdisetandua.jpg',
-    ),
-    Film(
-      title: 'Siksa Kubur',
-      year: 2024,
-      genre: 'Horror, Thriller, Mystery',
-      sipnosis:'Setelah orangtuanya tewas menjadi korban bom bunuh diri, Sita tak percaya pada agama. Ia bertekad mencari orang yang paling berdosa dan ketika orang itu meninggal, ia ingin ikut masuk ke dalam kuburannya, untuk membuktikan mitos tentang siksa kubur..',
-      poster: 'assets/images/siksakubur.jpg',
-    ),
-    Film(
-      title: 'Pengepungan Di Bukit Duri',
-      year: 2025,
-      genre: 'Thriller',
-      sipnosis: 'Edwin bekerja sebagai guru pengganti di SMA Duri, sekolah khusus anak-anak bermasalah. Di tengah Indonesia yang bergejolak dan memanas, situasi pun menjadi rumit ketika ia terjebak di antara pertarungan hidup dan mati.',
-      poster: 'assets/images/pengepunganbukit.jpg',
-    ),
-    Film(
-      title: '1 Kakak 7 Ponakan',
-      year: 2025,
-      genre: 'Drama',
-      sipnosis:'Setelah kakak-kakaknya meninggal dunia mendadak, Hendarmoko, arsitek muda, tiba-tiba menjadi orangtua tunggal bagi para keponakannya. Ketika kesempatan yang lebih baik muncul, ia harus memilih antara cinta, karier, atau keponakan-keponakannya.',
-      poster: 'assets/images/sakatupo.jpg',
-    ),
-  ];
-   @override
+  const HomeScreen({super.key});
+
+  @override
   Widget build(BuildContext context) {
+    final List<Film> films = [
+      Film(
+        title: "Pengabdi Setan",
+        year: 2017,
+        genre: "Horror",
+        sinopsis:
+            "Film horor tentang keluarga yang diganggu arwah ibunya setelah kematian sang ibu.",
+        posterAsset: 'assets/images/pengabdisetansatu.jpg',
+      ),
+      Film(
+        title: "Pengabdi Setan 2",
+        year: 2022,
+        genre: "Horror",
+        sinopsis:
+            "Sekuel dari film pertama, melanjutkan kisah teror setelah keluarga pindah ke rumah susun.",
+        posterAsset: 'assets/images/pengabdisetandua.jpg',
+      ),
+      Film(
+        title: "Pengepungan di Bukit Duri",
+        year: 2023,
+        genre: "Drama",
+        sinopsis:
+            "Film drama sejarah yang menggambarkan perjuangan rakyat dalam mempertahankan kemerdekaan.",
+        posterAsset: "assets/images/pengepunganbukit.jpg",
+      ),
+    ];
+
     return Scaffold(
-      appBar: AppBar(title: Text('Daftar Film Favorit')),
-      body: ListView.builder(
-        itemCount: films.length,
-        itemBuilder: (context, index) {
-          final film = films[index];
-          return FilmItem(
-            film: film,
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => DetailScreen(film: film),
-                ),
-              );
-            },
-          );
-        },
+      appBar: AppBar(
+        title: const Text("Daftar Film Favorit"),
+        backgroundColor: Colors.orange,
+      ),
+      body: Padding(
+        padding: const EdgeInsets.all(8),
+        child: GridView.builder(
+          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 2, // jumlah kolom
+            crossAxisSpacing: 8,
+            mainAxisSpacing: 8,
+            childAspectRatio: 0.65,
+          ),
+          itemCount: films.length,
+          itemBuilder: (context, index) {
+            final film = films[index];
+            return FilmItem(
+              film: film,
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => DetailPage(film: film),
+                  ),
+                );
+              },
+            );
+          },
+        ),
       ),
     );
   }

@@ -1,16 +1,15 @@
-//Class film
 class Film {
   final String title;
   final int year;
   final String genre;
-  final String sipnosis;
-  final String poster;
+  final String sinopsis;
+  final String posterAsset;
 
   Film({
     required this.title,
     required this.year,
     required this.genre,
-    required this.sipnosis,
-    required this.poster,
+    required this.sinopsis,
+    required this.posterAsset,
   });
 }
