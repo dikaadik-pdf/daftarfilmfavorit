@@ -14,7 +14,7 @@ class DetailPage extends StatelessWidget {
         backgroundColor: Colors.orange,
       ),
       body: SingleChildScrollView(
-        padding: const EdgeInsets.all(16),
+        padding: const EdgeInsets.all(8),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -25,7 +25,7 @@ class DetailPage extends StatelessWidget {
                 fit: BoxFit.cover,
               ),
             ),
-            const SizedBox(height: 16),
+            const SizedBox(height: 8),
             Text(
               '${film.year} • ${film.genre}',
               style: const TextStyle(
@@ -33,7 +33,7 @@ class DetailPage extends StatelessWidget {
                 color: Colors.grey,
               ),
             ),
-            const SizedBox(height: 16),
+            const SizedBox(height: 8),
             const Text(
               "Sinopsis",
               style: TextStyle(
