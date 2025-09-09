@@ -20,12 +20,10 @@ class FilmItem extends StatelessWidget {
           children: [
             Expanded(
               child: ClipRRect(
-                borderRadius:
-                    const BorderRadius.vertical(top: Radius.circular(12)),
-                child: Image.asset(
-                  film.posterAsset,
-                  fit: BoxFit.cover,
+                borderRadius: const BorderRadius.vertical(
+                  top: Radius.circular(12),
                 ),
+                child: Image.asset(film.posterAsset, fit: BoxFit.cover),
               ),
             ),
             Padding(

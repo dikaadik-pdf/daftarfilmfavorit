@@ -13,28 +13,32 @@ class HomeScreen extends StatelessWidget {
         title: "Pengabdi Setan",
         year: 2017,
         genre: "Horror",
-        sinopsis:"Film horor tentang keluarga yang diganggu arwah ibunya setelah kematian sang ibu.",
+        sinopsis:
+            "Film horor tentang keluarga yang diganggu arwah ibunya setelah kematian sang ibu.",
         posterAsset: 'assets/images/pengabdisetansatu.jpg',
       ),
       Film(
         title: "Pengabdi Setan 2",
         year: 2022,
         genre: "Horror",
-        sinopsis:"Sekuel dari film pertama, melanjutkan kisah teror setelah keluarga pindah ke rumah susun.",
+        sinopsis:
+            "Sekuel dari film pertama, melanjutkan kisah teror setelah keluarga pindah ke rumah susun.",
         posterAsset: 'assets/images/pengabdisetandua.jpg',
       ),
       Film(
         title: "Pengepungan di Bukit Duri",
         year: 2023,
         genre: "Drama",
-        sinopsis:"Film drama sejarah yang menggambarkan perjuangan rakyat dalam mempertahankan kemerdekaan.",
+        sinopsis:
+            "Film drama sejarah yang menggambarkan perjuangan rakyat dalam mempertahankan kemerdekaan.",
         posterAsset: "assets/images/pengepunganbukit.jpg",
       ),
       Film(
         title: "Siksa Kubur",
         year: 2025,
         genre: "Horror",
-        sinopsis: "Film horor tentang keluarga yang diganggu arwah ibunya setelah kematian sang ibu.",
+        sinopsis:
+            "Film horor tentang keluarga yang diganggu arwah ibunya setelah kematian sang ibu.",
         posterAsset: 'assets/images/siksakubur.jpg',
       ),
       Film(
@@ -73,8 +77,14 @@ class HomeScreen extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Daftar Film Favorit"),
+        title: Text('Film Favorit'),
         backgroundColor: Colors.orange,
+        automaticallyImplyLeading: false,
+        shape: const RoundedRectangleBorder(
+          borderRadius: BorderRadius.vertical(
+            bottom: Radius.circular(20), // ubah angka biar lebih melengkung
+          ),
+        ),
       ),
       body: Padding(
         padding: const EdgeInsets.all(8),
