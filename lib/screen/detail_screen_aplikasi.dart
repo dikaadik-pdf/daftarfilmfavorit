@@ -10,12 +10,21 @@ class DetailPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(film.title),
+        title: Text(
+          film.title,
+          style: const TextStyle(
+            fontSize: 18,
+            fontWeight: FontWeight.bold,
+            fontStyle: FontStyle.italic,
+            fontFamily: 'Poppins',
+          ),
+        ),
+        centerTitle: true, // supaya judul di tengah
         backgroundColor: Colors.orange,
         automaticallyImplyLeading: false,
         shape: const RoundedRectangleBorder(
           borderRadius: BorderRadius.vertical(
-            bottom: Radius.circular(20), // ubah angka biar lebih melengkung
+            bottom: Radius.circular(20),
           ),
         ),
       ),
@@ -91,7 +100,6 @@ class DetailPage extends StatelessWidget {
                 // Tombol favorit
                 ElevatedButton(
                   onPressed: () {
-                    // TODO: simpan ke favorit
                     ScaffoldMessenger.of(context).showSnackBar(
                       const SnackBar(content: Text("Ditambahkan ke favorit!")),
                     );
