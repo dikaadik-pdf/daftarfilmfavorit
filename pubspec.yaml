@@ -67,6 +67,8 @@ flutter:
     - assets/images/finaldestination.jpg
     - assets/images/jumbo.jpg
     - assets/images/sore.jpg
+    - assets/images/panji.jpg
+    - assets/images/demon.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
